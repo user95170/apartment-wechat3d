@@ -1,0 +1,53 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover,user-scalable=no">
+    <meta name="theme-color" content="#f5f5f3">
+    <title>住宅空间 3D</title>
+    <link rel="icon" href="data:,">
+    <link rel="stylesheet" href="styles.css">
+    <script type="module" src="vendor/model-viewer.min.js"></script>
+  </head>
+  <body>
+    <main class="viewer-shell">
+      <header class="topbar">
+        <div>
+          <h1>住宅空间</h1>
+          <p>交互式 3D</p>
+        </div>
+        <button class="fullscreen" id="fullscreenButton" type="button">全屏</button>
+      </header>
+
+      <model-viewer
+        id="apartmentViewer"
+        src="apartment_floorplan.glb"
+        poster="poster.jpg"
+        alt="住宅空间三维模型"
+        orientation="0deg 90deg 0deg"
+        camera-controls
+        touch-action="pan-y"
+        shadow-intensity="0.85"
+        shadow-softness="0.8"
+        exposure="1.05"
+        environment-image="neutral"
+        interaction-prompt="none"
+        loading="eager"
+        reveal="auto"
+        min-camera-orbit="auto 12deg 8%"
+        max-camera-orbit="auto 88deg 260%">
+        <div class="progress" slot="progress-bar" aria-live="polite">
+          <div class="progress-track"><span id="progressFill"></span></div>
+          <span id="progressLabel">载入 3D 空间</span>
+        </div>
+      </model-viewer>
+
+      <nav class="view-switcher" aria-label="视角">
+        <button type="button" data-view="living">客餐厅</button>
+        <button type="button" data-view="bedroom">主卧</button>
+        <button class="active" type="button" data-view="overall">整体</button>
+      </nav>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
