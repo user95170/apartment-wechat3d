@@ -73,7 +73,7 @@ model-viewer {
   left: 50%;
   bottom: max(18px, env(safe-area-inset-bottom));
   display: grid;
-  grid-template-columns: repeat(3, minmax(74px, 96px));
+  grid-template-columns: repeat(4, minmax(74px, 96px));
   gap: 3px;
   padding: 4px;
   transform: translateX(-50%);

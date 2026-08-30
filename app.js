@@ -6,6 +6,11 @@ const fullscreenButton = document.querySelector('#fullscreenButton');
 const viewButtons = [...document.querySelectorAll('[data-view]')];
 
 const views = {
+  plan: {
+    target: '7200m 550m 4450m',
+    orbit: '-3deg 2deg 32000m',
+    fov: '32deg'
+  },
   overall: {
     target: '6915m 550m 4100m',
     orbit: '-138deg 32deg 26900m',

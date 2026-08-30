@@ -34,7 +34,7 @@
         interaction-prompt="none"
         loading="eager"
         reveal="auto"
-        min-camera-orbit="auto 12deg 8%"
+        min-camera-orbit="auto 2deg 8%"
         max-camera-orbit="auto 88deg 260%">
         <div class="progress" slot="progress-bar" aria-live="polite">
           <div class="progress-track"><span id="progressFill"></span></div>
@@ -43,6 +43,7 @@
       </model-viewer>
 
       <nav class="view-switcher" aria-label="视角">
+        <button type="button" data-view="plan">平面</button>
         <button type="button" data-view="living">客餐厅</button>
         <button type="button" data-view="bedroom">主卧</button>
         <button class="active" type="button" data-view="overall">整体</button>
