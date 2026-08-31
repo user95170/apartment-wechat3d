@@ -9,7 +9,9 @@ const views = {
   plan: {
     target: '7200m 550m 4450m',
     orbit: '-3deg 2deg 32000m',
-    fov: '32deg'
+    mobileOrbit: '-93deg 2deg 26000m',
+    fov: '32deg',
+    exposure: 0.84
   },
   overall: {
     target: '6915m 550m 4100m',
@@ -31,9 +33,11 @@ const views = {
 function setView(name) {
   const view = views[name];
   if (!view) return;
+  const isNarrow = window.matchMedia('(max-width: 699px)').matches;
   viewer.cameraTarget = view.target;
-  viewer.cameraOrbit = view.orbit;
+  viewer.cameraOrbit = isNarrow && view.mobileOrbit ? view.mobileOrbit : view.orbit;
   viewer.fieldOfView = view.fov;
+  viewer.exposure = view.exposure ?? 0.90;
   viewer.jumpCameraToGoal();
   viewButtons.forEach((button) => {
     button.classList.toggle('active', button.dataset.view === name);
